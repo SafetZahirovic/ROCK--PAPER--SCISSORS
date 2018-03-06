@@ -1,6 +1,6 @@
 
 
-public class Game extends GameItems{
+public class Game extends GameItems {
     private Player player;
     private Computer computer;
     private CHOICES playerChoice;
@@ -10,13 +10,13 @@ public class Game extends GameItems{
     private int loses;
     private int ties;
 
-    public Game(){
+    public Game() {
         super();
         player = new Player();
         computer = new Computer();
     }
 
-    public void Play(){
+    public void Play() {
         playerChoice = player.getChoice();
         computerChoice = computer.getChoice();
         result = getResults();
@@ -24,15 +24,15 @@ public class Game extends GameItems{
         stats();
     }
 
-    public void displayStats(){
-        System.out.println("You have played "+ (wins + loses + ties));
-        System.out.println("You have won "+ (wins));
-        System.out.println("You have lost "+ (loses));
-        System.out.println("You have tied "+ (ties) + " times " + "\n");
+    public void displayStats() {
+        System.out.println("You have played " + (wins + loses + ties));
+        System.out.println("You have won " + (wins));
+        System.out.println("You have lost " + (loses));
+        System.out.println("You have tied " + (ties) + " times " + "\n");
     }
 
-    private void stats(){
-        if(result == RESULT.WIN)
+    private void stats() {
+        if (result == RESULT.WIN)
             wins++;
         else if (result == RESULT.LOSE)
             loses++;
@@ -40,7 +40,7 @@ public class Game extends GameItems{
             ties++;
     }
 
-    private void displayResults(){
+    private void displayResults() {
         switch (result) {
             case WIN:
                 System.out.println(playerChoice + " beats " + computerChoice + ". Player WINS");
@@ -54,11 +54,11 @@ public class Game extends GameItems{
         }
     }
 
-    public RESULT getResults(){
-        if(playerChoice == computerChoice){
+    public RESULT getResults() {
+        if (playerChoice == computerChoice) {
             return RESULT.TIE;
         }
-        switch (playerChoice){
+        switch (playerChoice) {
             case ROCK:
                 return (computerChoice == CHOICES.SCISSORS ? RESULT.WIN : RESULT.LOSE);
             case PAPER:

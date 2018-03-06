@@ -12,8 +12,7 @@ public class PlayGame {
                 game.Play();
                 System.out.println("Play again? Press any key to continue, or 'N' to quit");
                 quit = scan.nextLine().toUpperCase().charAt(0);
-            }
-            catch (IndexOutOfBoundsException e){
+            } catch (IndexOutOfBoundsException e) {
                 continue;
             }
 
